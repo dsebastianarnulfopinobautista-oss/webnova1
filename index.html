@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA - Bienestar Mental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div id="inicio">
+      <h1 class="logo">🌙 NOVA</h1>
+      <p class="slogan">"No olvides valorar tu alma"</p>
+      <button class="btn" onclick="mostrarRegistro()">Registrarse</button>
+      <button class="btn secondary" onclick="mostrarLogin()">Entrar</button>
+    </div>
+
+    <div id="registro" style="display:none;">
+      <h2>🌱 Registro</h2>
+      <input type="text" id="regNombre" placeholder="Tu nombre completo">
+      <input type="date" id="regFecha" placeholder="Fecha de nacimiento">
+      <input type="text" id="regApodo" placeholder="¿Cómo quieres que te llame?">
+      <input type="password" id="regPassword" placeholder="Contraseña">
+      <button class="btn" onclick="registrar()">Crear cuenta</button>
+      <button class="btn secondary" onclick="volverInicio()">⬅ Volver</button>
+      <p id="mensajeRegistro"></p>
+    </div>
+
+    <div id="login" style="display:none;">
+      <h2>✨ Inicia sesión</h2>
+      <input type="text" id="loginUsuario" placeholder="Nombre completo">
+      <input type="password" id="loginPassword" placeholder="Contraseña">
+      <button class="btn" onclick="login()">Entrar</button>
+      <button class="btn secondary" onclick="volverInicio()">⬅ Volver</button>
+      <p id="mensajeLogin"></p>
+    </div>
+
+    <div id="app" style="display:none;">
+      <h2 id="saludoUsuario"></h2>
+      <p class="slogan">¿Qué te gustaría hacer hoy?</p>
+      
+      <div class="menu-iconos">
+        <div class="icono-3d" data-target="panel-calendario">📅</div>
+        <div class="icono-3d" data-target="panel-playlist">🎧</div>
+        <div class="icono-3d" data-target="panel-meditacion">🧘</div>
+        <div class="icono-3d" data-target="panel-actividades">🏃</div>
+      </div>
+
+      <div id="panel-calendario" class="panel-contenido" style="display:none;">
+        <h3>🗓️ Mi Calendario</h3>
+        <p id="fecha-hoy">Cargando fecha...</p>
+        <strong>Tu reto de hoy:</strong>
+        <p id="reto-diario" style="font-style: italic;">Cargando reto...</p>
+      </div>
+      
+      <div id="panel-playlist" class="panel-contenido" style="display:none;">
+        <h3>🎧 Playlist Relajante</h3>
+        <p>Hemos preparado una selección de música y sonidos para calmar tu mente.</p>
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u" target="_blank" class="btn">Abrir en Spotify</a>
+      </div>
+
+      <div id="panel-meditacion" class="panel-contenido" style="display:none;">
+        <h3>🧘 Meditación Guiada</h3>
+        <p id="ejercicio-meditacion">Cargando ejercicio...</p>
+      </div>
+
+      <div id="panel-actividades" class="panel-contenido" style="display:none;">
+        <h3>🏃 Actividades Recomendadas</h3>
+        <p id="actividad-sugerida">Cargando actividad...</p>
+      </div>
+
+      <button class="btn secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
